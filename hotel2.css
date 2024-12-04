@@ -1,0 +1,524 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #063d3d;
+  height: 20%;
+}
+
+.buttons .wash{
+  position: absolute;top: 20%;left: 25%;
+  display: inline-block;
+  color: #fff;
+  padding: 30px 38px;
+  background: linear-gradient(90deg, #6616d0, #ac34e7);
+  border-radius: 45px;
+  margin: 10px;
+  font-size: 30px;
+  font-weight: 400;
+  text-decoration: none;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0,0,0,0.1);
+  overflow: hidden;
+  height: 15%;
+}
+.buttons .wash2{
+    position: absolute;bottom: 0%;right: 20%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: 15%;
+    width: 15%;
+  }
+
+.buttons .Billing{
+    position: absolute;top: 20%;right: 15%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: 15%;
+  }
+  .buttons .Kitchen{
+    position: absolute;top: 40%;right: 0%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38p;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 15%;height: 50%;
+    padding-top: 10%;
+    padding-left: 4%;
+  }
+  .buttons .Entrence{
+    position: absolute;top: 20%;left: 0%;
+    display: inline-block;
+    color: rgb(10, 0, 0);
+    padding: 50px 80px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 20%;
+    height: 20%;
+    background-image: url("download\ \(1\).jpg");
+   
+  }
+  .buttons .T1{
+    position: absolute;top: 55%;left: 10%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .buttons .T2{
+    position: absolute;top: 55%;left: 25%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .buttons .T3{
+    position: absolute;top: 30%;right: 50%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .buttons .T4{
+    position: absolute;top: 60%;right: 50%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .buttons .T5{
+    position: absolute;top: 30%;right: 30%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .buttons .T6{
+    position: absolute;top: 60%;right: 30%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .buttons .T7{
+    position: absolute;bottom: 5%;left: 10%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .buttons .T8{
+    position: absolute;bottom: 5%;left: 30%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .buttons .T9{
+    position: absolute;bottom: 5%;left: 50%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .buttons .FamilyRoom{
+    position: absolute;bottom: 0%;left: 0%;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #ae80eb, #ba87d3);
+    border-radius: 45px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 60%;
+    height: 20%;
+    font-size: 125%;
+  }
+.buttons .button.two{
+  background: linear-gradient(90deg, #025ce3, #4e94fd);
+}
+.buttons .wash.overlay{
+  position: absolute;
+  background: #fff;
+  top: 0;
+  left: 0;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  animation: blink 0.5s linear;
+}
+header .navbar{
+  margin: auto;
+  width: 100%;
+  padding: 35px 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .menu{
+  display: flex;
+  flex-wrap: wrap;
+}
+.navbar .logo a{
+  text-decoration: none;
+  font-size: 22px;
+  color: rgb(11, 246, 105);
+  font-weight: 500;
+}
+.navbar .menu li{
+  list-style: none;
+  margin: 0 6px;
+}
+.navbar .menu a{
+  color: #000;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.navbar .menu a:hover{
+  color: #f2f2f2;
+}
+.navbar .buttons input{
+  outline: none;
+  color: #f2f2f2;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 12px;
+  padding: 6px 15px;
+  border: none;
+  margin: 0 8px;
+  margin-left: 90%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-image: linear-gradient( 135deg, #ff9a9e  10%, #F6416C 100%);
+}
+.navbar .buttons{
+  position: absolute;top: 5%;right: 10%;
+}
+.navbar .buttons input:hover{
+  transform: scale(0.97);
+}
+header .play-button{
+  position: absolute;
+  right: 50px;
+  bottom: 40px;
+}
+.play-button .play{
+  font-size: 18px;
+  font-weight: 500;
+}
+ .play-button .play::before{
+   content: '';
+   position: absolute;
+   height: 3px;
+   width: 50px;
+   top: 50%;
+   transform: translateY(-50%);
+   left: -58px;
+   background: #000;
+ }
+.play-button i{
+  height: 40px;
+  width: 40px;
+  border: 2px solid #000;
+  line-height: 38px;
+  text-align: center;
+  margin-left: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+@media (max-width:850px) {
+  header .navbar{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 5px;
+  }
+  .navbar .menu {
+    margin: 10px 0 20px 0;
+  }
+  header .text-content{
+    margin: 30px 0 0 20px ;
+    width: 70%;
+  }
+  header .text-content h2{
+    font-size: 20px;
+  }
+}
+@media (max-width:410px) {
+  header{
+    height: 100vh;
+    width: 100%;
+    border-radius: 0px;
+  }
+  header .navbar{
+    padding: 15px 10px;
+}
+}
+@media (max-width: 790px) {
+  nav .nav-bar .sidebarOpen{
+      display: block;
+  }
+
+  .menu{
+      position: fixed;
+      height: 100%;
+      width: 320px;
+      left: -100%;
+      top: 0;
+      padding: 20px;
+      background-color: var(--side-nav);
+      z-index: 100;
+      transition: all 0.4s ease;
+  }
+
+  nav.active .menu{
+      left: -0%;
+  }
+
+  nav.active .nav-bar .navLogo a{
+      opacity: 0;
+      transition: all 0.3s ease;
+  }
+
+  .menu .logo-toggle{
+      display: block;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .logo-toggle .siderbarClose{
+      color: var(--text-color);
+      font-size: 24px;
+      cursor: pointer;
+  }
+
+  .nav-bar .nav-links{
+      flex-direction: column;
+      padding-top: 30px;
+  }
+
+  .nav-links li a{
+      display: block;
+      margin-top: 20px;
+  }
+}
+
+@keyframes blink {
+  0%{
+    height: 0px;
+    width: 0px;
+    opacity: 0.3;
+  }
+  100%{
+    height: 400px;
+    width: 400px;
+    opacity: 0;
+  }
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  position: relative;
+  top: 12rem;
+}
+
+.active {
+  display: flex;
+}
+
+.card{
+  max-width: 350px;
+  width: 100%;
+  margin:10px auto;
+  margin-top: 1rem;
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.card .title{
+  font-size: 22px;
+  font-weight: 500;
+}
+.card .content{
+  margin-top: 20px;
+}
+.card  label.box{
+  background: #ddd;
+  margin-top: 12px;
+  padding: 10px 12px;
+  display: flex;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+#one:checked ~ label.first,
+#two:checked ~ label.second,
+#three:checked ~ label.third{
+  border-color: #8E49E8;
+  background: #d5bbf7;
+}
+.card  label.box:hover{
+  background: #d5bbf7;
+}
+.card  label.box .circle{
+  height: 22px;
+  width: 22px;
+  background: #ccc;
+  border: 5px solid transparent;
+  display: inline-block;
+  margin-right: 15px;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+  box-shadow: inset -4px -4px 10px rgba(0, 0, 0, 0.2);
+}
+#one:checked ~ label.first .circle,
+#two:checked ~ label.second .circle,
+#three:checked ~ label.third .circle{
+  border-color: #8E49E8;
+  background: #fff;
+
+}
+.card  label.box .plan{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.card input[type="radio"]{
+  display: none;
+}
+
+.register{
+  background-color: rgb(27, 87, 177);
+  color: white;
+  width: 6rem;
+  height: 2rem;
+}

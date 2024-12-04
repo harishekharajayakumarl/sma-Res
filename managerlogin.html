@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="logstyle.css">
+  </head>
+  <body>
+    <div class="buttons">
+      <a class="button"href="#">Button</a>
+      <a class="button two" href="#">Button</a>
+    </div>
+  
+    
+    <div class="center">
+      <h1>Login</h1>
+      <div class="form-container">
+        <div class="txt_field">
+          <input type="text" id="user-name" required>
+          <span></span>
+          <label>Username/Phone Number</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" data-password required>
+          <span></span>
+          <label>Password</label>
+        </div>
+        <button class="sign-up" id="login">Login</button>
+        <div class="signup_link">
+          Not a member? <a href="signup.html">Signup</a>
+        </div>
+      </div>
+      
+    </div>
+
+    <script type="module">
+      // Ripple Effect JavaScript Code
+      let buttons = document.querySelectorAll(".button");
+    
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", (e)=>{
+          e.preventDefault(); // preventing form submitting
+    
+          let overlay = document.createElement('span'); //creating a tag(span)
+          overlay.classList.add("overlay"); //adding a class inside the span
+          e.target.appendChild(overlay); //adding overlay tag inside the anchor tag at in HTML
+    
+          let xValue = e.clientX - e.target.offsetLeft; //by this we get perfect value where we will click
+          let yValue = e.clientY - e.target.offsetTop; //by this we get perfect value where we will click
+    
+           overlay.style.left = xValue + "px"; //changing the position of the overlay according to our clicks on the button
+           overlay.style.top = yValue + "px"; //changing the position of the overlay according to our clicks on the button
+      });
+      }
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+  import { getAuth ,signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDcr9CKg9uYF_CYqCVI8bXPUlL4EFT6a80",
+      authDomain: "smares1-d408b.firebaseapp.com",
+      databaseURL: "https://smares1-d408b-default-rtdb.firebaseio.com/",
+      projectId: "smares1-d408b",
+      storageBucket: "smares1-d408b.appspot.com",
+      messagingSenderId: "1054578763993",
+      appId: "1:1054578763993:web:9e2b72371498f9de6b76c8"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  const database = getDatabase();
+const auth = getAuth(app);
+
+      let loginBtn=document.querySelector('#login')
+      let userName=document.querySelector('#user-name')
+      let password=document.querySelector("[data-password]")
+      
+
+      loginBtn.addEventListener('click',()=>{
+        
+          signInWithEmailAndPassword(auth,userName.value, password.value).then(response=>{
+          const  userId = response.user.uid
+            
+            if(userId){
+                localStorage.setItem("id", userId);
+                alert("login successfully")
+                window.location.href="manager.html"
+            }
+        }).catch(error=>{
+            alert(error.message)
+        })
+
+      })
+
+      
+
+
+      </script>
+
+  </body>
+</html>

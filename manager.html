@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Our Team Section | CodingLab </title>---->
+    <link rel="stylesheet" href="manager.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+    <header>
+        <div class="home">
+            <a href="LoginPage (1).html"><input type="button" value="Home"></a>
+        </div>
+       
+    </header>
+  <div class="container">
+    <input type="radio" name="dot" id="one">
+    <input type="radio" name="dot" id="two">
+ <div class="main-card">
+    
+      <div class="cards" data-temp-parent>
+        <template data-temp>
+            <div class="card">
+                <div class="content">
+                  <div class="details">
+                    <p data-name></p>
+                    <p data-time></p>
+                    <p data-date></p>
+                    <p data-comment></p>
+                    <p data-comment></p>
+                    
+                  </div>
+                  
+                </div>
+               </div>
+        </template>
+    
+        
+        
+      </div>
+    </div>
+    <div class="button">
+      <label for="one" class=" active one"></label>
+      <label for="two" class="two"></label>
+    </div>
+  </div>
+
+  <script type="module">
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+  import { getDatabase, ref, set ,onValue} from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDcr9CKg9uYF_CYqCVI8bXPUlL4EFT6a80",
+      authDomain: "smares1-d408b.firebaseapp.com",
+      databaseURL: "https://smares1-d408b-default-rtdb.firebaseio.com/",
+      projectId: "smares1-d408b",
+      storageBucket: "smares1-d408b.appspot.com",
+      messagingSenderId: "1054578763993",
+      appId: "1:1054578763993:web:9e2b72371498f9de6b76c8"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase();
+
+    const template=document.querySelector("[data-temp]")
+    const tempParent=document.querySelector("[data-temp-parent]")
+
+    onValue(ref(database,`users/managers/${localStorage.getItem("id")}/reservationList`),(snapshot) => {
+    const datas = Object.values(snapshot.val());
+    
+    datas.forEach(data=>{
+        let templateData=template.content.cloneNode(true)
+        templateData.querySelector('[data-name]').innerText=data.name
+        templateData.querySelector('[data-time]').innerText=data.time
+        templateData.querySelector('[data-date]').innerText=data.date
+        templateData.querySelector('[data-comment]').innerText=data.comment
+
+        tempParent.appendChild(templateData)
+    })
+})
+
+
+  </script>
+
+
+</body>
+</html>

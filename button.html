@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+   <!--- <title> Custom Radio Button | CodingLab </title>---->
+    <link rel="stylesheet" href="button.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="buttons">
+        <a href="LoginPage (3).html"><input type="button" value="Home"></a>
+ </div>
+
+</nav>
+<div class="card">
+    <div class="title">Choose Your Restaurant</div>
+  <div class="content">
+    <input type="radio" name="rd" id="one">
+    <input type="radio" name="rd" id="two">
+    <input type="radio" name="rd" id="three">
+
+    <label for="one" class="box first">
+      <div class="plan">
+      <span class="circle"></span>
+      <span class="yearly">Taj</span>
+    </div>
+    <button class="register">Register</button>
+    </label>
+    <label for="two" class="box second">
+      <div class="plan">
+      <span class="circle"></span>
+      <span class="yearly">Enkeys</span>
+    </div>
+    <button class="register">Register</button>
+    </label>
+    <label for="three" class="box third">
+      <div class="plan">
+      <span class="circle"></span>
+        <span class="yearly">Ambili Hotel</span>
+      </div>
+        <button class="register">Register</button>
+    </label>
+  </div>
+</header>
+ </div>
+
+ <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+  import { getDatabase, ref, set,onValue } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDcr9CKg9uYF_CYqCVI8bXPUlL4EFT6a80",
+      authDomain: "smares1-d408b.firebaseapp.com",
+      databaseURL: "https://smares1-d408b-default-rtdb.firebaseio.com/",
+      projectId: "smares1-d408b",
+      storageBucket: "smares1-d408b.appspot.com",
+      messagingSenderId: "1054578763993",
+      appId: "1:1054578763993:web:9e2b72371498f9de6b76c8"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  const database = getDatabase();
+
+  const buttons=document.querySelectorAll(".register")
+
+  buttons.forEach((button,index)=>{
+    button.addEventListener("click",()=>{
+      if(index==0){
+        localStorage.setItem("hotelName",document.querySelectorAll(".yearly")[index].innerHTML)
+        window.location.href="hotel1.html"
+      }else if(index==1){
+        localStorage.setItem("hotelName",document.querySelectorAll(".yearly")[index].innerHTML)
+        window.location.href="hotel2.html"
+      }else{
+        localStorage.setItem("hotelName",document.querySelectorAll(".yearly")[index].innerHTML)
+        window.location.href="hotel3.html"
+      }
+    })
+  })
+
+
+
+
+
+ </script>
+
+
+
+</body>
+</html>

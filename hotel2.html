@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Button Ripple Effect | CodingLab </title>-->
+    <link rel="stylesheet" href="hotel2.css">
+   </head>
+<body><header>
+  <nav class="navbar">
+    <div class="logo"><a href="#">ENKEYS</a></div>  
+    <div class="buttons">
+      <a href="LoginPage (3).html"><input type="button" value="Home"></a>
+      
+
+    </div>
+  </nav>
+</header>
+  <div class="buttons">
+    <a class="Billing"href="#">wash</a>
+    <a class="wash" href="#">Billing</a>
+    <a class="Kitchen" href="#">Kitchen</a>
+    <a class="Entrence" href="#">Entrance</a>
+    <a class="T1 table-btn" >T1</a>
+    <a class="T2 table-btn" href="#">T2</a>
+    <a class="T3 table-btn" href="#">T3</a>
+    <a class="T4 table-btn" href="#">T4</a>
+    <a class="T5 table-btn" href="#">T5</a>
+    <a class="T6 table-btn" href="#">T6</a>
+    <a class="FamilyRoom" href="#">Family Room</a>
+    <a class="T7 table-btn" href="#">T7</a>
+    <a class="T8 table-btn" href="#">T8</a>
+    <a class="T9 table-btn" href="#">T9</a>
+    <a class="wash2" href="#">wash</a>
+   
+  </div>
+  <div class="form" data-form>
+    <input placeholder="Name" type="text" required data-name/>
+    <input placeholder="Date" type="date" required data-date/>
+    <input placeholder="Time" type="time" required data-time/>
+    <textarea placeholder="Number of Diners" data-comment></textarea>
+    <textarea placeholder="FOOD" data-comment></textarea>
+    <div class="card">
+      <div class="title">YOUR RATING</div>
+    <div class="content">
+      <input type="checkbox" name="rd" id="one">
+      <input type="checkbox" name="rd" id="two">
+      <input type="checkbox" name="rd" id="three">
+  
+      <label for="one" class="box first">
+        <div class="plan">
+        <span class="circle"></span>
+        <span class="yearly">VERY GOOD</span>
+      </div>
+      
+      </label>
+      <label for="two" class="box second">
+        <div class="plan">
+        <span class="circle"></span>
+        <span class="yearly">GOOD</span>
+      </div>
+     
+      </label>
+      <label for="three" class="box third">
+        <div class="plan">
+        <span class="circle"></span>
+          <span class="yearly">BAD</span>
+        </div>
+          
+      </label>
+    </div>
+   </div>
+    <input class="formBtn" type="submit" data-submit />
+  </div>
+  
+</div>
+
+<script type="module">
+  // Ripple Effect JavaScript Code
+  let buttons = document.querySelectorAll(".wash");
+
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", (e)=>{
+      e.preventDefault(); // preventing form submitting
+
+      let overlay = document.createElement('span'); //creating a tag(span)
+      overlay.classList.add("overlay"); //adding a class inside the span
+      e.target.appendChild(overlay); //adding overlay tag inside the anchor tag at in HTML
+
+      let xValue = e.clientX - e.target.offsetLeft; //by this we get perfect value where we will click
+      let yValue = e.clientY - e.target.offsetTop; //by this we get perfect value where we will click
+
+       overlay.style.left = xValue + "px"; //changing the position of the overlay according to our clicks on the button
+       overlay.style.top = yValue + "px"; //changing the position of the overlay according to our clicks on the button
+  });
+  }
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+  import { getDatabase, ref, set ,onValue} from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDcr9CKg9uYF_CYqCVI8bXPUlL4EFT6a80",
+      authDomain: "smares1-d408b.firebaseapp.com",
+      databaseURL: "https://smares1-d408b-default-rtdb.firebaseio.com/",
+      projectId: "smares1-d408b",
+      storageBucket: "smares1-d408b.appspot.com",
+      messagingSenderId: "1054578763993",
+      appId: "1:1054578763993:web:9e2b72371498f9de6b76c8"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  const database = getDatabase();
+
+
+  const tableButtons=document.querySelectorAll(".table-btn")
+  const sheduleSubmitButton = document.querySelector("[data-submit]")
+  const name=document.querySelector("[data-name]")
+  const time=document.querySelector("[data-time]")
+  const date=document.querySelector("[data-date]")
+  const comment=document.querySelector("[data-comment]")
+  const id=localStorage.getItem("id");
+  const currentTime=new Date()
+  const currentTimeStamp=currentTime.getTime()
+  let tableNUm
+  let userId
+
+ 
+
+
+
+  tableButtons.forEach((btn,i)=>{
+    btn.addEventListener("click",()=>{
+      
+      onValue(ref(database,`users/managers/${id}/reservationList`),(snapshot) => {
+        let datas
+        if(snapshot.val()){
+          datas = Object.values(snapshot.val());
+          datas.forEach(data=>{
+       if(data.tableNumber!=i+1){
+        console.log("hello1");
+        document.querySelector("[data-form]").classList.add("active")
+        tableNUm=i+1
+       }else{
+        alert("booked")
+        console.log("hello2");
+       }
+    })
+        }
+      
+        
+    
+})
+      
+    })
+  })
+
+  sheduleSubmitButton.addEventListener("click",addSheduleToDb)
+
+  function addSheduleToDb(e){
+    set(ref(database,'/users/managers/9PfnGqijh7PUemmFQexCNggNnsO2/reservationList/'+currentTimeStamp),{
+            name:name.value,
+            time:time.value,
+            date:date.value,
+            comment:comment.value,
+            tableNumber:tableNUm
+        })
+    document.querySelector("[data-form]").classList.remove("active")
+  }
+
+  </script>
+</body>
+</html>

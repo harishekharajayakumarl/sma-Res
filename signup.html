@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="logstyle.css">
+  </head>
+  <body>
+    <div class="center">
+      <h1>Sign Up</h1>
+      <div class="form-container">
+        <div class="txt_field">
+            <input type="text" id="un" required>
+            <span></span>
+            <label>User Name</label>
+        </div>  
+        <div class="txt_field">
+          <input type="text" id="pn" required>
+          <span></span>
+          <label>Phone Number</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" id="em" required>
+            <span></span>
+            <label>Email id</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" id="ps" required>
+          <span></span>
+          <label>Password</label>
+        </div>
+        <button class="sign-up" id="signUp">Sign up</button>
+        <div class="signup_link">
+          Already Registered? <a href="login.html">Login</a>
+          <p><strong>OR</strong></p>
+          <p>Go back to Home <a href="LoginPage (3).html" class="btn btn-link">Home</a></p>
+        </div>
+      </div>
+      
+    </div>
+
+  </body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDcr9CKg9uYF_CYqCVI8bXPUlL4EFT6a80",
+      authDomain: "smares1-d408b.firebaseapp.com",
+      databaseURL: "https://smares1-d408b-default-rtdb.firebaseio.com/",
+      projectId: "smares1-d408b",
+      storageBucket: "smares1-d408b.appspot.com",
+      messagingSenderId: "1054578763993",
+      appId: "1:1054578763993:web:9e2b72371498f9de6b76c8"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  const database = getDatabase();
+const auth = getAuth(app);
+
+document.getElementById("signUp").addEventListener('click',() => {
+
+  var email = document.getElementById('em').value;
+  var password = document.getElementById('ps').value;
+  var username = document.getElementById('un').value;
+  var Phone = document.getElementById('pn').value;
+
+  let userId
+
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    userId=userCredential.user.uid
+    if(userId){
+      alert('user created');
+      console.log('hrlo')
+      set(ref(database,'users/customer/'+userId),{
+      userName:username,
+      email:email,
+      phoneNumber:Phone 
+    })
+    // if(userId){
+    //  window.location.href="login.html";
+    // }
+    }
+    
+    //  
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+    // ..
+  });
+
+
+})
+      </script>
+</html>
